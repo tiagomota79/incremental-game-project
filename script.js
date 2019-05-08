@@ -52,7 +52,7 @@ let simulation = {
 const counter = document.getElementById('counter');
 const coin = document.getElementById('coin');
 const left = document.getElementById('left');
-const right = document.getElementById('right');
+const center = document.getElementById('center');
 const minerButton = document.getElementById('minerButton');
 const minerCounter = document.getElementById('minerCounter');
 const computerButton = document.getElementById('computerButton');
@@ -74,20 +74,18 @@ const matrioshkaBrainCounter = document.getElementById(
 const simulationButton = document.getElementById('simulationButton');
 const simulationCounter = document.getElementById('simulationCounter');
 function updateCoinsCounter() {
-  if (coinsCounter === 0) {
-    counter.innerText = coinsCounter + '\ncoin';
+  if (coinsCounter > 999999999) {
+    counter.innerText =
+      (coinsCounter / 1000000000).toFixed(2) + '\nbillion\ncoins';
+  } else if (coinsCounter > 999999) {
+    counter.innerText =
+      (coinsCounter / 1000000).toFixed(2) + '\nmillion\ncoins';
+  } else if (coinsCounter > 1) {
+    counter.innerText = coinsCounter + '\ncoins';
   } else if (coinsCounter === 1) {
     counter.innerText = coinsCounter + '\ncoin';
-  } else if (coinsCounter > 1 && coinsCounter < 999999) {
-    counter.innerText = coinsCounter + '\ncoins';
-  } else if (coinsCounter > 999999 && coinsCounter < 1999999) {
-    counter.innerText = coinsCounter / 1000000 + ' million\ncoins';
-  } else if (coinsCounter > 1999999 && coinsCounter < 999999999) {
-    counter.innerText = coinsCounter / 1000000 + ' millions\ncoins';
-  } else if (coinsCounter > 999999999 && coinsCounter < 1999999999) {
-    counter.innerText = coinsCounter / 1000000000 + ' billion\ncoins';
-  } else if (coinsCounter > 1999999999) {
-    counter.innerText = coinsCounter / 1000000000 + ' billions\ncoins';
+  } else if (coinsCounter === 0) {
+    counter.innerText = coinsCounter + '\ncoin';
   }
 }
 coin.addEventListener('click', () => {
@@ -96,6 +94,15 @@ coin.addEventListener('click', () => {
     coinsCounter++;
   } else {
     coinsCounter += cps;
+  }
+  if (cps > 1000) {
+    left.style.backgroundImage = 'url(imgs/fallingcoins0.gif)';
+  }
+  if (cps > 100000) {
+    left.style.backgroundImage = 'url(imgs/fallingcoins1.gif)';
+  }
+  if (cps > 1000000) {
+    left.style.backgroundImage = 'url(imgs/fallingcoins2.gif)';
   }
   updateCoinsCounter();
   if (coinsCounter > miner.cost / 2) {

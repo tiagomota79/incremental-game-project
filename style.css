@@ -16,7 +16,7 @@ body {
     border-right: solid .3rem orange;
   }
   
-  #right {
+  #center {
     background-color: grey;
   }
   
@@ -69,105 +69,174 @@ body {
   }
 
   #minerButton {
+    display: flex;
     height: 12.5%;
     padding: .2rem;
     border: solid .2rem grey;
-    opacity: 0;
+    opacity: 1;
+    transition: transform .2s ease-in-out;
+  }
+
+  #minerButton:active {
+    transform: scale(0.9);
   }
 
   #minerImg {
-    flex: 1;
-    background-image: url(imgs/miner-icon.png);
-    background-size: auto;
+    width: 5rem;
+    background-image: url(imgs/miner.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  #minerCounter {
+    border: solid .2rem orange;
+    border-radius: 100%;
   }
 
   #computerButton {
+    display: flex;
     height: 12.5%;
     padding: .2rem;
     border: solid .2rem grey;
-    opacity: 0;
+    opacity: 1;
+    transition: transform .2s ease-in-out;
+  }
+
+  #computerButton:active {
+    transform: scale(0.9);
   }
 
   #computerImg {
-    flex: 1;
+    width: 5rem;
     background-image: url(imgs/computer.png);
-    background-size: auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   #dataCenterButton {
+    display: flex;
     height: 12.5%;
     padding: .2rem;
     border: solid .2rem grey;
-    opacity: 0;
+    opacity: 1;
+    transition: transform .2s ease-in-out;
+  }
+
+  #dataCenterButton:active {
+    transform: scale(0.9);
   }
 
   #dataCenterImg {
-    flex: 1;
+    width: 5rem;
     background-image: url(imgs/datacenter.png);
-    background-size: auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   #superComputerButton {
+    display: flex;
     height: 12.5%;
     padding: .2rem;
     border: solid .2rem grey;
-    opacity: 0;
+    opacity: 1;
+    transition: transform .2s ease-in-out;
+  }
+
+  #superComputerButton:active {
+    transform: scale(0.9);
   }
 
   #superComputerImg {
-    flex: 1;
-    background-image: url(imgs/datacenter.png);
-    background-size: auto;
+    width: 5rem;
+    background-image: url(imgs/supercomputer.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   #quantumComputerButton {
+    display: flex;
     height: 12.5%;
     padding: .2rem;
     border: solid .2rem grey;
-    opacity: 0;
+    opacity: 1;
+    transition: transform .2s ease-in-out;
+  }
+
+  #quantumComputerButton:active {
+    transform: scale(0.9);
   }
 
   #quantumComputerImg {
-    flex: 1;
-    background-image: url(imgs/datacenter.png);
-    background-size: auto;
+    width: 5rem;
+    background-image: url(imgs/quantumcomputer.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   #aiButton {
+    display: flex;
     height: 12.5%;
     padding: .2rem;
     border: solid .2rem grey;
-    opacity: 0;
+    opacity: 1;
+    transition: transform .2s ease-in-out;
+  }
+
+  #aiButton:active {
+    transform: scale(0.9);
   }
 
   #aiImg {
-    flex: 1;
-    background-image: url(imgs/datacenter.png);
-    background-size: auto;
+    width: 5rem;
+    background-image: url(imgs/AI.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   #matrioshkaBrainButton {
-  height: 12.5%;
+    display: flex;
+    height: 12.5%;
     padding: .2rem;
     border: solid .2rem grey;
-    opacity: 0;
+    opacity: 1;
+    transition: transform .2s ease-in-out;
+  }
+
+  #matrioshkaBrainButton:active {
+    transform: scale(0.9);
   }
 
   #matrioshkaBrainImg {
-    flex: 1;
-    background-image: url(imgs/datacenter.png);
-    background-size: auto;
+    width: 5rem;
+    background-image: url(imgs/matrioshka.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   #simulationButton {
+    display: flex;
     height: 12.5%;
-      padding: .2rem;
-      border: solid .2rem grey;
-      opacity: 0;
+    padding: .2rem;
+    border: solid .2rem grey;
+    opacity: 1;
+    transition: transform .2s ease-in-out;
+  }
+
+  #simulationButton:active {
+    transform: scale(0.9);
   }
   
   #simulationImg {
-      flex: 1;
-      background-image: url(imgs/datacenter.png);
-      background-size: auto;
+    width: 5rem;
+    background-image: url(imgs/simulation.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
