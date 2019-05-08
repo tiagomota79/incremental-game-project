@@ -4,7 +4,7 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: 15% 85%;
+    grid-template-columns: 20% 60% 20%;
   }
   
   #left {
@@ -39,7 +39,7 @@ body {
   }
   
   #coin{
-    width: 90%;
+    width: 75%;
     transition: transform .2s;
   }
   #coin:hover {
@@ -55,4 +55,48 @@ body {
   
   #coin:active {
     animation: coinAnimation .2s ease-in-out; 
+  }
+
+  #buttons {
+    display: flex;
+    flex-direction: column;
+    font-family: "Courier New", Courier, monospace;
+    color: white;
+    font-weight: bold;
+    background-color: black;
+    border-left: solid .3rem orange;
+  }
+
+  #minerButton {
+    height: 12.5vh;
+    padding: .2rem;
+    border: solid .2rem grey;
+    opacity: 0;
+  }
+
+  #minerImg {
+    flex: 1;
+    background-image: url(imgs/miner-icon.png);
+    background-size: auto;
+  }
+
+  #minerPrice {
+    height: 12,5vh;
+  }
+
+  #computerButton {
+    height: 12.5vh;
+    padding: .2rem;
+    border: solid .2rem grey;
+    opacity: 0;
+  }
+
+  #computerImg {
+    flex: 1;
+    background-image: url(imgs/computer.png);
+    background-size: auto;
+  }
+
+  #computerPrice {
+    height: 12,5vh;
   }
