@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 15% 85%;
+  }
+  
+  #left {
+    grid-template-rows: 20% auto;
+    text-align: center;
+    height: 100vh;
+    background-color: black;
+  }
+  
+  #right {
+    background-color: grey;
+  }
+  
+  #counter {
+    grid-row: 1;
+    font-family: "Courier New", Courier, monospace;
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: 2rem;
+  }
+  
+  #coin {
+    grid-row: 2;
+    align-self: end;
+    width: 80%;
+    transition: transform .2s;
+  }
+  
+  #coin:hover {
+    transform: scale(1.1);
+  }
+  
+  @keyframes coinAnimation {
+    0% { transform: scale(1); }
+    20% { transform: scale: (0.6); }
+    60% { transform: scale: (1.1); }
+    100% { transform: scale: (1); }
+  }
+  
+  #coin:active {
+    animation: coinAnimation .2s ease-in-out; 
+  }
