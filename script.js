@@ -1,5 +1,6 @@
 let body = document.querySelector('body');
 let coinsCounter = 0;
+let coinsHistory = 0;
 let cps = 0;
 let clicksCounter = 0;
 let miner = {
@@ -92,67 +93,12 @@ coin.addEventListener('click', () => {
   clicksCounter++;
   if (cps === 0) {
     coinsCounter++;
+    coinsHistory++;
   } else {
     coinsCounter += cps;
-  }
-  if (cps > 1000) {
-    left.style.backgroundImage = 'url(imgs/fallingcoins0.gif)';
-  }
-  if (cps > 100000) {
-    left.style.backgroundImage = 'url(imgs/fallingcoins1.gif)';
-  }
-  if (cps > 1000000) {
-    left.style.backgroundImage = 'url(imgs/fallingcoins2.gif)';
+    coinsHistory += cps;
   }
   updateCoinsCounter();
-  if (coinsCounter > miner.cost / 2) {
-    minerButton.style.opacity = '0.5';
-  }
-  if (coinsCounter >= miner.cost) {
-    minerButton.style.opacity = '1';
-  }
-  if (coinsCounter > computer.cost / 2) {
-    computerButton.style.opacity = '0.5';
-  }
-  if (coinsCounter >= computer.cost) {
-    computerButton.style.opacity = '1';
-  }
-  if (coinsCounter >= dataCenter.cost / 2) {
-    dataCenterButton.style.opacity = '0.5';
-  }
-  if (coinsCounter >= dataCenter.cost) {
-    dataCenterButton.style.opacity = '1';
-  }
-  if (coinsCounter >= superComputer.cost / 2) {
-    superComputerButton.style.opacity = '0.5';
-  }
-  if (coinsCounter >= superComputer.cost) {
-    superComputerButton.style.opacity = '1';
-  }
-  if (coinsCounter >= quantumComputer.cost / 2) {
-    quantumComputerButton.style.opacity = '0.5';
-  }
-  if (coinsCounter >= quantumComputer.cost) {
-    quantumComputerButton.style.opacity = '1';
-  }
-  if (coinsCounter >= ai.cost / 2) {
-    aiButton.style.opacity = '0.5';
-  }
-  if (coinsCounter >= ai.cost) {
-    aiButton.style.opacity = '1';
-  }
-  if (coinsCounter >= matrioshkaBrain.cost / 2) {
-    matrioshkaBrainButton.style.opacity = '0.5';
-  }
-  if (coinsCounter >= matrioshkaBrain.cost) {
-    matrioshkaBrainButton.style.opacity = '1';
-  }
-  if (coinsCounter >= simulation.cost / 2) {
-    simulationButton.style.opacity = '0.5';
-  }
-  if (coinsCounter >= simulation.cost) {
-    simulationButton.style.opacity = '1';
-  }
 });
 minerButton.addEventListener('click', () => {
   if (coinsCounter >= miner.cost) {
@@ -217,7 +163,88 @@ simulationButton.addEventListener('click', () => {
 });
 setInterval(() => {
   coinsCounter += cps;
+  coinsHistory += cps;
 }, 1000);
 setInterval(() => {
   updateCoinsCounter();
+  if (coinsCounter > miner.cost / 2) {
+    minerButton.style.opacity = '0.5';
+  }
+  if (coinsCounter >= miner.cost) {
+    minerButton.style.opacity = '1';
+  }
+  if (coinsCounter > computer.cost / 2) {
+    computerButton.style.opacity = '0.5';
+  }
+  if (coinsCounter >= computer.cost) {
+    computerButton.style.opacity = '1';
+  }
+  if (coinsCounter >= dataCenter.cost / 2) {
+    dataCenterButton.style.opacity = '0.5';
+  }
+  if (coinsCounter >= dataCenter.cost) {
+    dataCenterButton.style.opacity = '1';
+  }
+  if (coinsCounter >= superComputer.cost / 2) {
+    superComputerButton.style.opacity = '0.5';
+  }
+  if (coinsCounter >= superComputer.cost) {
+    superComputerButton.style.opacity = '1';
+  }
+  if (coinsCounter >= quantumComputer.cost / 2) {
+    quantumComputerButton.style.opacity = '0.5';
+  }
+  if (coinsCounter >= quantumComputer.cost) {
+    quantumComputerButton.style.opacity = '1';
+  }
+  if (coinsCounter >= ai.cost / 2) {
+    aiButton.style.opacity = '0.5';
+  }
+  if (coinsCounter >= ai.cost) {
+    aiButton.style.opacity = '1';
+  }
+  if (coinsCounter >= matrioshkaBrain.cost / 2) {
+    matrioshkaBrainButton.style.opacity = '0.5';
+  }
+  if (coinsCounter >= matrioshkaBrain.cost) {
+    matrioshkaBrainButton.style.opacity = '1';
+  }
+  if (coinsCounter >= simulation.cost / 2) {
+    simulationButton.style.opacity = '0.5';
+  }
+  if (coinsCounter >= simulation.cost) {
+    simulationButton.style.opacity = '1';
+  }
+  if (cps > 1000) {
+    left.style.backgroundImage = 'url(imgs/fallingcoins0.gif)';
+  }
+  if (cps > 100000) {
+    left.style.backgroundImage = 'url(imgs/fallingcoins1.gif)';
+  }
+  if (cps > 1000000) {
+    left.style.backgroundImage = 'url(imgs/fallingcoins2.gif)';
+  }
 }, 10);
+setInterval(() => {
+  bonusButton = document.createElement('bonusButton');
+  bonusButton.setAttribute('id', 'bonusButton');
+  bonusButton.style.position = 'absolute';
+  bonusButton.style.top = Math.floor(Math.random() * (80 - 10 + 1) + 10) + 'vh';
+  bonusButton.style.left =
+    Math.floor(Math.random() * (80 - 10 + 1) + 10) + 'vw';
+  setTimeout(() => {
+    body.appendChild(bonusButton);
+    bonusButton.addEventListener('click', () => {
+      if (cps === 0) {
+        coinsCounter++;
+      }
+      coinsCounter += Math.floor(
+        Math.random() * (cps * 10 - cps * 2 + 1) + cps * 2
+      );
+      body.removeChild(bonusButton);
+    });
+  }, Math.random() * (6000 - 1 + 1) + 1);
+  setTimeout(() => {
+    body.removeChild(bonusButton);
+  }, 10000);
+}, 40000);

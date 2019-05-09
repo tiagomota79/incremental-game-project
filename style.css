@@ -35,7 +35,6 @@ body {
     justify-content: center;
     align-items: center;
     flex: 1;
-    grid-row: 2;
   }
   
   #coin{
@@ -90,8 +89,14 @@ body {
   }
 
   #minerCounter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border: solid .2rem orange;
     border-radius: 100%;
+    height: 40px;
+    width: 40px;
   }
 
   #computerButton {
@@ -115,6 +120,17 @@ body {
     background-repeat: no-repeat;
   }
 
+  #computerCounter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid .2rem orange;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+  }
+
   #dataCenterButton {
     display: flex;
     height: 12.5%;
@@ -136,6 +152,17 @@ body {
     background-repeat: no-repeat;
   }
 
+  #dataCenterCounter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid .2rem orange;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+  }
+
   #superComputerButton {
     display: flex;
     height: 12.5%;
@@ -155,6 +182,17 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+  }
+
+  #superComputerCounter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid .2rem orange;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
   }
 
   #quantumComputerButton {
@@ -239,4 +277,17 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+  }
+
+  #bonusButton  {
+    background-image: url(imgs/coin.png);
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    animation: bonusCoin 2s infinite linear;
+  }
+
+  @keyframes bonusCoin {
+    from{transform: rotateY(0deg);}
+	  to{transform: rotateY(359deg);}
   }
