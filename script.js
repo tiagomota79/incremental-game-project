@@ -226,25 +226,28 @@ setInterval(() => {
   }
 }, 10);
 setInterval(() => {
-  bonusButton = document.createElement('bonusButton');
-  bonusButton.setAttribute('id', 'bonusButton');
-  bonusButton.style.position = 'absolute';
-  bonusButton.style.top = Math.floor(Math.random() * (80 - 10 + 1) + 10) + 'vh';
-  bonusButton.style.left =
-    Math.floor(Math.random() * (80 - 10 + 1) + 10) + 'vw';
+  bonusCoin = document.createElement('bonusCoin');
+  bonusCoin.setAttribute('id', 'bonusCoin');
+  bonusCoin.style.position = 'absolute';
+  bonusCoin.style.top = Math.floor(Math.random() * (80 - 10 + 1) + 10) + 'vh';
+  bonusCoin.style.left = Math.floor(Math.random() * (80 - 10 + 1) + 10) + 'vw';
   setTimeout(() => {
-    body.appendChild(bonusButton);
-    bonusButton.addEventListener('click', () => {
+    body.appendChild(bonusCoin);
+    bonusCoin.addEventListener('click', () => {
       if (cps === 0) {
         coinsCounter++;
+        coinsHistory++;
       }
-      coinsCounter += Math.floor(
+      let coinsTemp = Math.floor(
         Math.random() * (cps * 10 - cps * 2 + 1) + cps * 2
       );
-      body.removeChild(bonusButton);
+      coinsCounter += coinsTemp;
+      coinsHistory += coinsTemp;
+      body.removeChild(bonusCoin);
+      clicksCounter++;
     });
-  }, Math.random() * (6000 - 1 + 1) + 1);
+  }, Math.random() * (60000 - 1 + 1) + 1);
   setTimeout(() => {
-    body.removeChild(bonusButton);
+    body.removeChild(bonusCoin);
   }, 10000);
 }, 40000);

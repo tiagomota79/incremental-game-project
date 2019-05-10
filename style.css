@@ -279,7 +279,7 @@ body {
     background-repeat: no-repeat;
   }
 
-  #bonusButton  {
+  #bonusCoin {
     background-image: url(imgs/coin.png);
     width: 200px;
     height: 200px;
