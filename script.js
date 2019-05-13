@@ -74,6 +74,7 @@ const matrioshkaBrainCounter = document.getElementById(
 );
 const simulationButton = document.getElementById('simulationButton');
 const simulationCounter = document.getElementById('simulationCounter');
+const minerRow = document.getElementById('minerRow');
 function updateCoinsCounter() {
   if (coinsCounter > 999999999) {
     counter.innerText =
@@ -106,6 +107,11 @@ minerButton.addEventListener('click', () => {
     miner.count++;
     coinsCounter -= miner.cost;
     minerCounter.innerText = miner.count;
+    let img = document.createElement('img');
+    img.src = 'imgs/miner.jpeg';
+    if (miner.count < 20) {
+      minerRow.appendChild(img);
+    }
   }
 });
 computerButton.addEventListener('click', () => {
@@ -114,6 +120,11 @@ computerButton.addEventListener('click', () => {
     computer.count++;
     coinsCounter -= computer.cost;
     computerCounter.innerText = computer.count;
+    let img = document.createElement('img');
+    img.src = 'imgs/computer.png';
+    if (computer.count < 20) {
+      computerRow.appendChild(img);
+    }
   }
 });
 dataCenterButton.addEventListener('click', () => {
@@ -122,6 +133,11 @@ dataCenterButton.addEventListener('click', () => {
     dataCenter.count++;
     coinsCounter -= dataCenter.cost;
     dataCenterCounter.innerText = dataCenter.count;
+    let img = document.createElement('img');
+    img.src = 'imgs/datacenter.png';
+    if (dataCenter.count < 20) {
+      dataCenterRow.appendChild(img);
+    }
   }
 });
 superComputerButton.addEventListener('click', () => {
@@ -130,6 +146,11 @@ superComputerButton.addEventListener('click', () => {
     superComputer.count++;
     coinsCounter -= superComputer.cost;
     superComputerCounter.innerText = superComputer.count;
+    let img = document.createElement('img');
+    img.src = 'imgs/supercomputer.jpg';
+    if (superComputer.count < 20) {
+      superComputerRow.appendChild(img);
+    }
   }
 });
 quantumComputerButton.addEventListener('click', () => {
@@ -138,6 +159,11 @@ quantumComputerButton.addEventListener('click', () => {
     quantumComputer.count++;
     coinsCounter -= quantumComputer.cost;
     quantumComputerCounter.innerText = quantumComputer.count;
+    let img = document.createElement('img');
+    img.src = 'imgs/quantumcomputer.jpg';
+    if (quantumComputer.count < 20) {
+      quantumComputerRow.appendChild(img);
+    }
   }
 });
 aiButton.addEventListener('click', () => {
@@ -146,6 +172,11 @@ aiButton.addEventListener('click', () => {
     ai.count++;
     coinsCounter -= ai.cost;
     aiCounter.innerText = ai.count;
+    let img = document.createElement('img');
+    img.src = 'imgs/AI.png';
+    if (ai.count < 20) {
+      aiRow.appendChild(img);
+    }
   }
 });
 matrioshkaBrainButton.addEventListener('click', () => {
@@ -154,6 +185,11 @@ matrioshkaBrainButton.addEventListener('click', () => {
     matrioshkaBrain.count++;
     coinsCounter -= matrioshkaBrain.cost;
     matrioshkaBrainCounter.innerText = matrioshkaBrain.count;
+    let img = document.createElement('img');
+    img.src = 'imgs/matrioshka.jpg';
+    if (matrioshkaBrain.count < 20) {
+      matrioshkaBrainRow.appendChild(img);
+    }
   }
 });
 simulationButton.addEventListener('click', () => {
@@ -167,53 +203,86 @@ setInterval(() => {
 }, 1000);
 setInterval(() => {
   updateCoinsCounter();
+  if (coinsCounter < miner.cost) {
+    minerButton.style.pointerEvents = 'none';
+  }
   if (coinsCounter > miner.cost / 2) {
     minerButton.style.opacity = '0.5';
   }
   if (coinsCounter >= miner.cost) {
     minerButton.style.opacity = '1';
+    minerButton.style.pointerEvents = 'auto';
+  }
+  if (coinsCounter < computer.cost) {
+    computerButton.style.pointerEvents = 'none';
   }
   if (coinsCounter > computer.cost / 2) {
     computerButton.style.opacity = '0.5';
   }
   if (coinsCounter >= computer.cost) {
     computerButton.style.opacity = '1';
+    computerButton.style.pointerEvents = 'auto';
   }
-  if (coinsCounter >= dataCenter.cost / 2) {
+  if (coinsCounter < dataCenter.cost) {
+    dataCenterButton.style.pointerEvents = 'none';
+  }
+  if (coinsCounter > dataCenter.cost / 2) {
     dataCenterButton.style.opacity = '0.5';
   }
   if (coinsCounter >= dataCenter.cost) {
     dataCenterButton.style.opacity = '1';
+    dataCenterButton.style.pointerEvents = 'auto';
   }
-  if (coinsCounter >= superComputer.cost / 2) {
+  if (coinsCounter < superComputer.cost) {
+    superComputerButton.style.pointerEvents = 'none';
+  }
+  if (coinsCounter > superComputer.cost / 2) {
     superComputerButton.style.opacity = '0.5';
   }
   if (coinsCounter >= superComputer.cost) {
     superComputerButton.style.opacity = '1';
+    superComputerButton.style.pointerEvents = 'auto';
   }
-  if (coinsCounter >= quantumComputer.cost / 2) {
+  if (coinsCounter < quantumComputer.cost) {
+    quantumComputerButton.style.pointerEvents = 'none';
+  }
+  if (coinsCounter > quantumComputer.cost / 2) {
     quantumComputerButton.style.opacity = '0.5';
   }
   if (coinsCounter >= quantumComputer.cost) {
     quantumComputerButton.style.opacity = '1';
+    quantumComputerButton.style.pointerEvents = 'auto';
   }
-  if (coinsCounter >= ai.cost / 2) {
+  if (coinsCounter < ai.cost) {
+    aiButton.style.pointerEvents = 'none';
+  }
+  if (coinsCounter > ai.cost / 2) {
     aiButton.style.opacity = '0.5';
   }
   if (coinsCounter >= ai.cost) {
     aiButton.style.opacity = '1';
+    aiButton.style.pointerEvents = 'auto';
   }
-  if (coinsCounter >= matrioshkaBrain.cost / 2) {
+  if (coinsCounter < matrioshkaBrain.cost) {
+    matrioshkaBrainButton.style.pointerEvents = 'none';
+  }
+  if (coinsCounter > matrioshkaBrain.cost / 2) {
     matrioshkaBrainButton.style.opacity = '0.5';
   }
   if (coinsCounter >= matrioshkaBrain.cost) {
     matrioshkaBrainButton.style.opacity = '1';
+    matrioshkaBrainButton.style.pointerEvents = 'auto';
   }
-  if (coinsCounter >= simulation.cost / 2) {
+  if (coinsCounter < simulation.cost) {
+    simulationButton.style.pointerEvents = 'none';
+  }
+  if (coinsCounter > simulation.cost / 2) {
     simulationButton.style.opacity = '0.5';
   }
   if (coinsCounter >= simulation.cost) {
     simulationButton.style.opacity = '1';
+    simulationButton.style.pointerEvents = 'auto';
+    achievments[5].isComplete();
   }
   if (cps > 1000) {
     left.style.backgroundImage = 'url(imgs/fallingcoins0.gif)';
@@ -224,6 +293,21 @@ setInterval(() => {
   if (cps > 1000000) {
     left.style.backgroundImage = 'url(imgs/fallingcoins2.gif)';
   }
+  if (miner.count >= 5) {
+    achievments[0].isComplete();
+  }
+  if (coinsHistory >= 1000) {
+    achievments[1].isComplete();
+  }
+  if (clicksCounter >= 100) {
+    achievments[2].isComplete();
+  }
+  if (cps >= 10000) {
+    achievments[3].isComplete();
+  }
+  if (ai.count >= 1) {
+    achievments[4].isComplete();
+  }
 }, 10);
 setInterval(() => {
   bonusCoin = document.createElement('bonusCoin');
@@ -231,23 +315,88 @@ setInterval(() => {
   bonusCoin.style.position = 'absolute';
   bonusCoin.style.top = Math.floor(Math.random() * (80 - 10 + 1) + 10) + 'vh';
   bonusCoin.style.left = Math.floor(Math.random() * (80 - 10 + 1) + 10) + 'vw';
-  setTimeout(() => {
-    body.appendChild(bonusCoin);
-    bonusCoin.addEventListener('click', () => {
-      if (cps === 0) {
-        coinsCounter++;
-        coinsHistory++;
-      }
-      let coinsTemp = Math.floor(
-        Math.random() * (cps * 10 - cps * 2 + 1) + cps * 2
-      );
-      coinsCounter += coinsTemp;
-      coinsHistory += coinsTemp;
-      body.removeChild(bonusCoin);
-      clicksCounter++;
-    });
-  }, Math.random() * (60000 - 1 + 1) + 1);
+  body.appendChild(bonusCoin);
+  bonusCoin.addEventListener('click', () => {
+    if (cps === 0) {
+      coinsCounter++;
+      coinsHistory++;
+    }
+    let coinsTemp = Math.floor(
+      Math.random() * (cps * 10 - cps * 2 + 1) + cps * 2
+    );
+    coinsCounter += coinsTemp;
+    coinsHistory += coinsTemp;
+    body.removeChild(bonusCoin);
+    clicksCounter++;
+  });
   setTimeout(() => {
     body.removeChild(bonusCoin);
   }, 10000);
-}, 40000);
+}, 60000);
+
+let achievments = [
+  {
+    message: 'Entrepeneur',
+    isComplete: () => {
+      if (achievments[0].seen === false) {
+        return createAchievment(achievments[0]);
+      }
+    },
+    seen: false,
+  },
+  {
+    message: 'From rags to riches',
+    isComplete: () => {
+      if (achievments[1].seen === false) {
+        return createAchievment(achievments[1]);
+      }
+    },
+    seen: false,
+  },
+  {
+    message: 'Click madness',
+    isComplete: () => {
+      if (achievments[2].seen === false) {
+        return createAchievment(achievments[2]);
+      }
+    },
+    seen: false,
+  },
+  {
+    message: 'Money rocket',
+    isComplete: () => {
+      if (achievments[3].seen === false) {
+        return createAchievment(achievments[3]);
+      }
+    },
+    seen: false,
+  },
+  {
+    message: 'Singularity',
+    isComplete: () => {
+      if (achievments[4].seen === false) {
+        return createAchievment(achievments[4]);
+      }
+    },
+    seen: false,
+  },
+  {
+    message: 'Ready for simulation',
+    isComplete: () => {
+      if (achievments[5].seen === false) {
+        return createAchievment(achievments[5]);
+      }
+    },
+    seen: false,
+  },
+];
+function createAchievment(achievments) {
+  achievments.seen = true;
+  achievment = document.createElement('achievment');
+  achievment.setAttribute('id', 'achievment');
+  achievment.innerText = achievments.message;
+  body.appendChild(achievment);
+  achievment.addEventListener('click', () => {
+    body.removeChild(achievment);
+  });
+}

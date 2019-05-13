@@ -1,10 +1,14 @@
 body {
     margin: 0;
+    background-color: black;
+    font-family: "Courier New", Courier, monospace;
+    color: white;
+    font-weight: bold;
 }
 
 .container {
     display: grid;
-    grid-template-columns: 20% 60% 20%;
+    grid-template-columns: 18% 57% 25%;
   }
   
   #left {
@@ -17,7 +21,8 @@ body {
   }
   
   #center {
-    background-color: grey;
+    background-color: black;
+    height: 100vh;
   }
   
   #counter {
@@ -56,6 +61,24 @@ body {
     animation: coinAnimation .2s ease-in-out; 
   }
 
+  #center {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  #minerRow, #computerRow, #dataCenterRow, #superComputerRow, #quantumComputerRow, #aiRow, #matrioshkaBrainRow {
+    display: flex;
+    height: 10.875%;
+    padding: .2rem;
+    border: .2rem;
+  }
+
+  #minerRow img, #computerRow img, #dataCenterRow img, #superComputerRow img, #quantumComputerRow img, #aiRow img, #matrioshkaBrainRow img {
+    height: 100%;
+    width: auto;
+  }
+
   #buttons {
     display: flex;
     flex-direction: column;
@@ -69,26 +92,39 @@ body {
 
   #minerButton {
     display: flex;
-    height: 12.5%;
+    height: 10%;
     padding: .2rem;
     border: solid .2rem grey;
-    opacity: 1;
+    opacity: 0;
     transition: transform .2s ease-in-out;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #minerButton img, #computerButton img, #dataCenterButton img, #superComputerButton img, #quantumComputerButton img, #aiButton img, #matrioshkaBrainButton img, #simulationButton img {
+    height: 100%;
+    width: auto;
   }
 
   #minerButton:active {
     transform: scale(0.9);
   }
 
-  #minerImg {
-    width: 5rem;
-    background-image: url(imgs/miner.jpeg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  #minerPrice, #computerPrice, #dataCenterPrice, #superComputerPrice, #quantumComputerPrice, #aiPrice, #matrioshkaBrainPrice, #simulationPrice {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
   }
 
-  #minerCounter {
+  #minerPrice img, #computerPrice img, #dataCenterPrice img, #superComputerPrice img, #quantumComputerPrice img, #aiPrice img, #matrioshkaBrainPrice img, #simulationPrice img {
+    height: 1.5rem;
+  }
+
+  #minerPrice p, #computerPrice p, #dataCenterPrice p, #superComputerPrice p, #quantumComputerPrice p, #aiPrice p, #matrioshkaBrainPrice p, #simulationPrice p {
+    margin: 0;
+  }
+
+  #minerCounter, #computerCounter, #dataCenterCounter, #superComputerCounter, #quantumComputerCounter, #aiCounter, #matrioshkaBrainCounter, #simulationCounter {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -97,188 +133,114 @@ body {
     border-radius: 100%;
     height: 40px;
     width: 40px;
+    margin-right: .5rem;
   }
 
   #computerButton {
     display: flex;
-    height: 12.5%;
+    height: 10%;
     padding: .2rem;
     border: solid .2rem grey;
-    opacity: 1;
+    opacity: 0;
     transition: transform .2s ease-in-out;
+    justify-content: space-between;
+    align-items: center;
   }
 
   #computerButton:active {
     transform: scale(0.9);
   }
 
-  #computerImg {
-    width: 5rem;
-    background-image: url(imgs/computer.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  #computerCounter {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: solid .2rem orange;
-    border-radius: 100%;
-    height: 40px;
-    width: 40px;
-  }
-
   #dataCenterButton {
     display: flex;
-    height: 12.5%;
+    height: 10%;
     padding: .2rem;
     border: solid .2rem grey;
-    opacity: 1;
+    opacity: 0;
     transition: transform .2s ease-in-out;
+    justify-content: space-between;
+    align-items: center;
   }
 
   #dataCenterButton:active {
     transform: scale(0.9);
   }
 
-  #dataCenterImg {
-    width: 5rem;
-    background-image: url(imgs/datacenter.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  #dataCenterCounter {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: solid .2rem orange;
-    border-radius: 100%;
-    height: 40px;
-    width: 40px;
-  }
-
   #superComputerButton {
     display: flex;
-    height: 12.5%;
+    height: 10%;
     padding: .2rem;
     border: solid .2rem grey;
-    opacity: 1;
+    opacity: 0;
     transition: transform .2s ease-in-out;
+    justify-content: space-between;
+    align-items: center;
   }
 
   #superComputerButton:active {
     transform: scale(0.9);
   }
 
-  #superComputerImg {
-    width: 5rem;
-    background-image: url(imgs/supercomputer.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  #superComputerCounter {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: solid .2rem orange;
-    border-radius: 100%;
-    height: 40px;
-    width: 40px;
-  }
-
   #quantumComputerButton {
     display: flex;
-    height: 12.5%;
+    height: 10%;
     padding: .2rem;
     border: solid .2rem grey;
-    opacity: 1;
+    opacity: 0;
     transition: transform .2s ease-in-out;
+    justify-content: space-between;
+    align-items: center;
   }
 
   #quantumComputerButton:active {
     transform: scale(0.9);
   }
 
-  #quantumComputerImg {
-    width: 5rem;
-    background-image: url(imgs/quantumcomputer.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
   #aiButton {
     display: flex;
-    height: 12.5%;
+    height: 10%;
     padding: .2rem;
     border: solid .2rem grey;
-    opacity: 1;
+    opacity: 0;
     transition: transform .2s ease-in-out;
+    justify-content: space-between;
+    align-items: center;
   }
 
   #aiButton:active {
     transform: scale(0.9);
   }
 
-  #aiImg {
-    width: 5rem;
-    background-image: url(imgs/AI.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
   #matrioshkaBrainButton {
     display: flex;
-    height: 12.5%;
+    height: 10%;
     padding: .2rem;
     border: solid .2rem grey;
-    opacity: 1;
+    opacity: 0;
     transition: transform .2s ease-in-out;
+    justify-content: space-between;
+    align-items: center;
   }
 
   #matrioshkaBrainButton:active {
     transform: scale(0.9);
   }
 
-  #matrioshkaBrainImg {
-    width: 5rem;
-    background-image: url(imgs/matrioshka.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
   #simulationButton {
     display: flex;
-    height: 12.5%;
+    height: 17%;
     padding: .2rem;
     border: solid .2rem grey;
-    opacity: 1;
+    opacity: 0;
     transition: transform .2s ease-in-out;
+    justify-content: space-between;
+    align-items: center;
   }
 
   #simulationButton:active {
     transform: scale(0.9);
   }
   
-  #simulationImg {
-    width: 5rem;
-    background-image: url(imgs/simulation.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
   #bonusCoin {
     background-image: url(imgs/coin.png);
     width: 200px;
@@ -290,4 +252,29 @@ body {
   @keyframes bonusCoin {
     from{transform: rotateY(0deg);}
 	  to{transform: rotateY(359deg);}
+  }
+
+  #achievment {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 100px;
+    font-size: .5rem;
+    border: solid .2rem orange;
+    background-color: rgb(31, 31, 31);
+    font-size: 1.5rem;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    animation: achievmentEntry 0.5s ease-in-out;
+  }
+
+  @keyframes achievmentEntry {
+    from{transform: translateY(100%) translate(-50%);}
+    to{transform: translateY(0) translate(-50%);}
   }
