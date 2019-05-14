@@ -91,13 +91,16 @@ function updateCoinsCounter() {
   }
 }
 coin.addEventListener('click', () => {
+  createPopUp();
   clicksCounter++;
   if (cps === 0) {
     coinsCounter++;
     coinsHistory++;
+    popUp.innerText = '+ 1';
   } else {
     coinsCounter += cps;
     coinsHistory += cps;
+    popUp.innerText = '+ ' + cps;
   }
   updateCoinsCounter();
 });
@@ -194,6 +197,7 @@ matrioshkaBrainButton.addEventListener('click', () => {
 });
 simulationButton.addEventListener('click', () => {
   if (coinsCounter >= simulation.cost) {
+    localStorage.clear();
     location.reload();
   }
 });
@@ -312,6 +316,7 @@ setInterval(() => {
 setInterval(() => {
   bonusCoin = document.createElement('bonusCoin');
   bonusCoin.setAttribute('id', 'bonusCoin');
+  bonusCoin.setAttribute('onclick', 'coinSound()');
   bonusCoin.style.position = 'absolute';
   bonusCoin.style.top = Math.floor(Math.random() * (80 - 10 + 1) + 10) + 'vh';
   bonusCoin.style.left = Math.floor(Math.random() * (80 - 10 + 1) + 10) + 'vw';
@@ -326,6 +331,8 @@ setInterval(() => {
     );
     coinsCounter += coinsTemp;
     coinsHistory += coinsTemp;
+    createPopUp();
+    popUp.innerText = '+ ' + coinsTemp;
     body.removeChild(bonusCoin);
     clicksCounter++;
   });
@@ -399,4 +406,27 @@ function createAchievment(achievments) {
   achievment.addEventListener('click', () => {
     body.removeChild(achievment);
   });
+}
+
+function createPopUp() {
+  let x = event.clientX;
+  let y = event.clientY;
+  popUp = document.createElement('popUp');
+  popUp.setAttribute('id', 'popUp');
+  popUp.style.left = x + 'px';
+  popUp.style.top = y + 'px';
+  body.appendChild(popUp);
+  setTimeout(() => {
+    body.removeChild(popUp);
+  }, 100);
+}
+
+function coinSound() {
+  let audio = new Audio('sounds/coin.mp3');
+  audio.play();
+}
+
+function buySound() {
+  let audio = new Audio('sounds/buy.mp3');
+  audio.play();
 }
