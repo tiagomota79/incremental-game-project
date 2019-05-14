@@ -403,6 +403,7 @@ function createAchievment(achievments) {
   achievment.setAttribute('id', 'achievment');
   achievment.innerText = achievments.message;
   body.appendChild(achievment);
+  achievmentSound();
   achievment.addEventListener('click', () => {
     body.removeChild(achievment);
   });
@@ -428,5 +429,10 @@ function coinSound() {
 
 function buySound() {
   let audio = new Audio('sounds/buy.mp3');
+  audio.play();
+}
+
+function achievmentSound() {
+  let audio = new Audio('sounds/achievment.mp3');
   audio.play();
 }
