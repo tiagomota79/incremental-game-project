@@ -40,6 +40,7 @@ body {
     justify-content: center;
     align-items: center;
     flex: 1;
+    cursor: url('imgs/money.png') 32 32, pointer;
   }
   
   #coin{
@@ -90,7 +91,7 @@ body {
     border-left: solid .3rem orange;
   }
 
-  #minerButton {
+  #minerButton, #computerButton, #dataCenterButton, #superComputerButton, #quantumComputerButton, #aiButton, #matrioshkaBrainButton, #simulationButton {
     display: flex;
     height: 10%;
     padding: .2rem;
@@ -99,6 +100,7 @@ body {
     transition: transform .2s ease-in-out;
     justify-content: space-between;
     align-items: center;
+    cursor: url('imgs/buy.png') 32 32, pointer;
   }
 
   #minerButton img, #computerButton img, #dataCenterButton img, #superComputerButton img, #quantumComputerButton img, #aiButton img, #matrioshkaBrainButton img, #simulationButton img {
@@ -106,7 +108,7 @@ body {
     width: auto;
   }
 
-  #minerButton:active {
+  #minerButton:active, #computerButton:active, #dataCenterButton:active, #superComputerButton:active, #quantumComputerButton:active, #aiButton:active, #matrioshkaBrainButton:active, #simulationButton:active {
     transform: scale(0.9);
   }
 
@@ -135,111 +137,6 @@ body {
     width: 40px;
     margin-right: .5rem;
   }
-
-  #computerButton {
-    display: flex;
-    height: 10%;
-    padding: .2rem;
-    border: solid .2rem grey;
-    opacity: 0;
-    transition: transform .2s ease-in-out;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  #computerButton:active {
-    transform: scale(0.9);
-  }
-
-  #dataCenterButton {
-    display: flex;
-    height: 10%;
-    padding: .2rem;
-    border: solid .2rem grey;
-    opacity: 0;
-    transition: transform .2s ease-in-out;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  #dataCenterButton:active {
-    transform: scale(0.9);
-  }
-
-  #superComputerButton {
-    display: flex;
-    height: 10%;
-    padding: .2rem;
-    border: solid .2rem grey;
-    opacity: 0;
-    transition: transform .2s ease-in-out;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  #superComputerButton:active {
-    transform: scale(0.9);
-  }
-
-  #quantumComputerButton {
-    display: flex;
-    height: 10%;
-    padding: .2rem;
-    border: solid .2rem grey;
-    opacity: 0;
-    transition: transform .2s ease-in-out;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  #quantumComputerButton:active {
-    transform: scale(0.9);
-  }
-
-  #aiButton {
-    display: flex;
-    height: 10%;
-    padding: .2rem;
-    border: solid .2rem grey;
-    opacity: 0;
-    transition: transform .2s ease-in-out;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  #aiButton:active {
-    transform: scale(0.9);
-  }
-
-  #matrioshkaBrainButton {
-    display: flex;
-    height: 10%;
-    padding: .2rem;
-    border: solid .2rem grey;
-    opacity: 0;
-    transition: transform .2s ease-in-out;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  #matrioshkaBrainButton:active {
-    transform: scale(0.9);
-  }
-
-  #simulationButton {
-    display: flex;
-    height: 17%;
-    padding: .2rem;
-    border: solid .2rem grey;
-    opacity: 0;
-    transition: transform .2s ease-in-out;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  #simulationButton:active {
-    transform: scale(0.9);
-  }
   
   #bonusCoin {
     background-image: url(imgs/coin.png);
@@ -247,6 +144,7 @@ body {
     height: 200px;
     background-size: cover;
     animation: bonusCoin 2s infinite linear;
+    cursor: url('imgs/money.png') 32 32, pointer;
   }
 
   @keyframes bonusCoin {
@@ -272,6 +170,7 @@ body {
     text-align: center;
     vertical-align: middle;
     animation: achievmentSlide 0.7s ease-in-out;
+    cursor: url('imgs/achievment.png') 32 32, pointer;
   }
 
   @keyframes achievmentSlide {
