@@ -40,12 +40,12 @@ body {
     justify-content: center;
     align-items: center;
     flex: 1;
-    cursor: url('imgs/money.png') 32 32, pointer;
   }
   
   #coin{
     width: 75%;
     transition: transform .2s;
+    cursor: url('imgs/money.png') 32 32, pointer;
   }
   #coin:hover {
     transform: scale(1.1);

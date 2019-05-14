@@ -90,7 +90,7 @@ function updateCoinsCounter() {
     counter.innerText = coinsCounter + '\ncoin';
   }
 }
-coin.addEventListener('click', () => {
+coin.addEventListener('mousedown', () => {
   createPopUp();
   clicksCounter++;
   if (cps === 0) {
@@ -321,7 +321,7 @@ setInterval(() => {
   bonusCoin.style.top = Math.floor(Math.random() * (80 - 10 + 1) + 10) + 'vh';
   bonusCoin.style.left = Math.floor(Math.random() * (80 - 10 + 1) + 10) + 'vw';
   body.appendChild(bonusCoin);
-  bonusCoin.addEventListener('click', () => {
+  bonusCoin.addEventListener('mousedown', () => {
     if (cps === 0) {
       coinsCounter++;
       coinsHistory++;
@@ -332,7 +332,11 @@ setInterval(() => {
     coinsCounter += coinsTemp;
     coinsHistory += coinsTemp;
     createPopUp();
-    popUp.innerText = '+ ' + coinsTemp;
+    if (cps < 1) {
+      popUp.innerText = '+ 1';
+    } else {
+      popUp.innerText = '+ ' + coinsTemp;
+    }
     body.removeChild(bonusCoin);
     clicksCounter++;
   });
